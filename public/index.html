@@ -1,0 +1,195 @@
+<!doctype html>
+<!--<html lang="en">-->
+<html>
+<head>
+    <title>News Stories</title>
+<!--    <meta name="description=" content="Use RESTful API to load news stories">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/ico" href="images/favicon.ico">
+<!--
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Short+Stack' rel='stylesheet' type='text/css'>
+-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300|Raleway:300,300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Merriweather:400,400i,700,700i" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Malar:400,700|Merriweather:400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://use.fontawesome.com/0f28eea672.js"></script>-->
+  
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/temp.css" />
+    
+</head>
+
+  
+<body id="main">
+<!--
+  <div class="loader">
+    <div class="center">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+-->
+  
+<div id="portfolio">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">ForestOverTrees</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="myMenu navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#home">The Economist</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#home">NPR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">New York Times</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Reuters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Wall Street Journal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about" id="gotoAbout">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  
+  
+  <div class="bgimg-1">
+  <div class="trans1">
+
+    <div class="container newsSection">
+      <div class="row justify-content-around align-items-center">
+        
+        
+        
+        
+            <div class="newsDiv col-12">
+              <div class="gridBox">
+                <div class="alignTop">
+        <form action="">
+          <div class="choice" >
+            <h5><img src="images/npr-home.png" alt="NPR" /></h5>
+            <div class="selChoice">
+              <select id="nprTopics" name="nprTopics">
+                <option value="" disabled="" selected="">Select a topic</option>
+                <option value="1126">Africa</option>
+                <option value="1059">Analysis</option>
+                <option value="1132">Animals</option>
+                <option value="1142">Architecture</option>
+                <option value="1008">Arts &amp; Life</option>
+                <option value="1125">Asia</option>
+                <option value="1034">Book Reviews</option>
+                <option value="1006">Business</option>
+                <option value="1058">Columns</option>
+                <option value="1109">Concerts</option>
+                <option value="1049">Digital Life</option>
+                <option value="1017">Economy</option>
+                <option value="1013">Education</option>
+                <option value="139482413">Elections</option>
+                <option value="1131">Energy</option>
+                <option value="1025">Environment</option>
+                <option value="1124">Europe</option>
+                <option value="1141">Fine Art</option>
+                <option value="1134">Fitness &amp; Nutrition</option>
+                <option value="1053">Food</option>
+                <option value="1061">From Our Listeners</option>
+                <option value="1052">Games &amp; Humor</option>
+                <option value="1054">Gardening</option>
+                <option value="1031">Global Health</option>
+                <option value="1123">Governing</option>
+                <option value="1128">Health</option>
+                <option value="1027">Health Care</option>
+                <option value="1136">History</option>
+                <option value="1002">Home Page Top Stories</option>
+                <option value="139545299">House &amp; Senate Races</option>
+                <option value="1022">Interviews</option>
+                <option value="1150">Investigations</option>
+                <option value="1010">Iraq</option>
+                <option value="1101">Israeli-Palestinian Coverage</option>
+                <option value="1127">Latin America</option>
+                <option value="1070">Law</option>
+                <option value="1076">Low-Wage America</option>
+                <option value="1020">Media</option>
+                <option value="1135">Medical Treatments</option>
+                <option value="1029">Mental Health</option>
+                <option value="1009">Middle East</option>
+                <option value="4467349">Movie Reviews</option>
+                <option value="1105">Music Interviews</option>
+                <option value="1003">National</option>
+                <option value="1122">National Security</option>
+                <option value="1001">News</option>
+                <option value="1028">On Aging</option>
+                <option value="1133">On Disabilities</option>
+                <option value="1057">Opinion</option>
+                <option value="1046">Performing Arts</option>
+                <option value="1143">Photography</option>
+                <option value="1014">Politics</option>
+                <option value="455779263">Politics: Fact Check</option>
+                <option value="455779709">Politics: Issues</option>
+                <option value="1015">Race</option>
+                <option value="1139">Recipes</option>
+                <option value="1016">Religion</option>
+                <option value="1062">Remembrances</option>
+                <option value="1024">Research News</option>
+                <option value="1007">Science</option>
+                <option value="1083">Social Security Debate</option>
+                <option value="1026">Space</option>
+                <option value="1055">Sports</option>
+                <option value="139545485">Statewide Races</option>
+                <option value="1019">Technology</option>
+                <option value="1138">Television</option>
+                <option value="1078">The Impact of War</option>
+                <option value="1004">World</option>
+                <option value="1018">Your Money</option>                
+              </select>
+            </div>
+          </div>
+        </form>
+
+        <div class="news" id="newsStories">
+
+        
+<!--        this populated with API call-->
+      </div>
+            </div>  
+          </div>
+        </div>
+        
+      </div>  
+    </div>
+  </div>
+</div>
+
+
+</div>
+  <div class="bottom" id="footer">
+    <div class="container">
+      <div class="center">
+        <a href="#home"><i class="fa fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+  
+</body>
+</html>

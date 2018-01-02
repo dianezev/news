@@ -1,0 +1,607 @@
+/*************************************************************************************
+ * by Diane Zevenbergen dianezev@gmail.com
+ * January 2018
+ *
+ * STILL UNDER CONSTRUCTION!
+ *************************************************************************************/
+
+/**************************************
+ * COLORS
+ **************************************/
+:root {
+/*  --colorA: rgb(234, 235, 210);*/
+  --colorA: rgb(222, 222, 216);
+  --colorB: #235b9c;  /* link colors */
+  --colorC: rgb(16, 83, 135);
+  --colorD: rgba(0, 0, 0, 1); /* news titles */
+}
+
+
+
+
+/***********************************************
+************************************************
+* Universal/General Styles for start page
+************************************************
+************************************************/
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body, html {
+  line-height:1.8;
+}
+body { 
+    overflow: hidden;
+    position: relative;
+  /* using this instead of height: 100% in order to get animate scrolltop to work */
+  height: auto;
+  min-height: 100%;
+}
+html { 
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body, button, .btn, .sidebar, .scores {
+    font-family: 'Quicksand', sans-serif;
+}
+p { margin:0; }
+form {margin-bottom: 15px;}
+
+/*center class from CSS tricks*/
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.backgroundShade {
+    background-color: #090A3B;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.backgroundImg {
+/*    background-color: #121824;*/
+    background-color: #dedede;
+}
+
+/*photo from pexels.com*/
+.bgimg-1 {
+  background-attachment: fixed;
+/*  height: 100vh;*/
+/*  background-image: url("../images/holdWorld4.jpg");*/
+  background-image: url("../images/flag1.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-1 {
+/*  padding-top: 10vh;*/
+/*  padding-bottom: 5vh;*/
+/*  width: 100%;*/
+  height: 100%;
+  min-height: 100vh;
+}
+.trans1 {
+  background-color: rgba(0, 0, 0, .6);
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/*************************************************************
+ * NAVBAR 
+ *************************************************************/
+
+.navbar {
+  height: 60.8px;
+  font-weight: 800;
+}
+.navbar-brand {
+  font-size: 140%;
+}
+.navbar .myMenu li:hover {
+  font-weight: 800;
+}
+.myMenu a {
+  font-size: 120%;
+}
+ul.myMenu {
+  margin: auto;
+  width: 800%;
+  justify-content: flex-end;
+}
+.myMenu li {
+  text-align: center;
+}
+.choice h5 {
+  text-align: center;
+}
+.choice select {
+  font-size: 1.6em;
+}
+.choice button {
+  background-color: transparent;
+  border: none;
+}
+.selChoice select {
+  display: block;
+  margin: 0 auto;
+}
+.selChoice {
+  line-height: 3em;
+  margin:auto;
+  text-align: center;
+  align-content:center;
+}
+.selChoice button {
+  color:#3a78c0;
+  display: block;
+  margin: auto;
+}
+.selChoice i {
+  vertical-align: middle;
+}
+.selChoice button:hover {
+  color:white;
+}
+.selChoice select {
+  display: block;
+  max-width: 300px;
+}
+.selChoice h4, .selChoice select {
+/*  font-family: 'Alfa Slab One', cursive;*/
+  font-family: 'Mukta Malar', sans-serif;
+}
+
+.myMenu li:hover .choice {
+  display:block;
+}
+.jumbotron {
+  background: transparent;
+}
+.jumbotron h1, .navbar-brand {
+/*  font-family: 'Sedgwick Ave', cursive;*/
+}
+/*************************************************************
+ * FOOTER
+ *************************************************************/
+.bottom {
+  background-color: black;
+}
+.bottom .container {
+  position: relative;
+  height: 50px;
+}
+.bottom .container a {
+  color: white;
+  opacity: .7;
+}
+.bottom .container a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+/*************************************************************
+ * NEWS ARTICLES
+ *************************************************************/
+.newsSection {
+  margin-top: 66px;
+}
+.gridBox {
+/*  margin: 5px;*/
+  display:flex;
+/*  height: 70vh;*/
+  padding: 0;
+  overflow-y: auto;
+/*
+  -webkit-box-shadow: 3px 10px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    3px 10px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         3px 10px 5px 0px rgba(50, 50, 50, 0.75);
+*/
+}
+.newsDiv {
+/*  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;*/
+  font-family: 'Merriweather', serif;
+  font-size: .8125rem;
+  line-height: 1.125rem;
+  padding-top:35px;
+  padding-bottom:35px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.newsDiv h6 {
+  background-color: black;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.newsDiv h6 img{
+  height: 20px;
+}
+
+
+
+
+.news {
+  background-color: var(--colorA);
+  position: relative;
+}
+.news ul {
+/*  list-style-type: circle;*/
+}
+.news h5, .news i {
+  color: var(--colorC);
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.endStory {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.news i {
+  vertical-align: top;
+}
+.news h5 {
+  color: lightgray;
+  background-color: var(--colorD);
+  font-family: 'Mukta Malar', sans-serif;
+  margin: auto;
+/*  width: 80%;*/
+}
+.news h5:hover {
+  cursor: pointer;
+}
+.news h3 {
+  text-align: left;
+}
+.news a {
+  color: var(--colorB);
+}
+.news p {
+  padding: 8px;
+}
+
+/* This class automatically appended by NPR API*/
+.fullattribution {
+  text-align: center;
+}
+.gridBox .news p {
+/*  color: lightgray;*/
+}
+strong {
+  font-weight:800;
+  font-size: 110%;
+  text-transform: uppercase;
+}
+
+
+
+
+.alignTop {
+  align-self: top;
+  flex:1;  
+  overflow: inherit;
+}
+
+/********************************
+*********************************
+* Collapsible news
+*********************************
+********************************/
+.hide { display: none; }
+.news>li {
+/*    background-color: #d4d6db;*/
+    text-decoration: none;
+  border: none;
+  border-top: 1px solid var(--colorB);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.news a:hover {
+    color: #5d519f;
+}
+.news li p a {
+    color: #536fc0;
+}
+.news li p a:hover {
+    color: #678aee;
+    text-decoration: underline;
+}
+.news a {
+/*    color: #79798b;*/
+}
+.news p {
+/*    color: #d0d0e7;*/
+}
+.news {
+    font-weight: 200;
+    overflow-y: auto;
+    position:relative;
+}
+
+.news a {
+    text-decoration: none;
+}
+.news>li {
+    list-style: none;
+    position: relative;
+/*    text-align: center;*/
+}
+.news>li span, .storyTitle p {
+  display: inline-block;
+}
+.storyTitle span {
+/*  line-height:normal;*/
+  vertical-align: top;
+  padding-top: 8px;
+  line-height: 24px;
+/*  height:100px;*/
+}
+.storyTitle span i {
+  vertical-align: middle;
+}
+
+.storyTitle p {
+  width: 80%;
+}
+.news>li span.hide {
+  display: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  padding: 5px;
+}
+
+.news>li p, .news h1, .news h2, .news h3, .news h4, .news h5, .news h6 {
+    padding:5px 12px;
+}
+.news blockquote {
+  padding: 0 30px;
+  margin: 0;
+}
+.news>li li {
+    list-style: disc inside;
+/*    position: relative;*/
+/*    text-align: center;*/
+}
+.news>li ul p {
+  padding: 0;
+}
+.news>li ul {
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+
+.about p {
+    line-height: 1.2;
+    padding-right:.5em;
+    padding-left: .5em;
+    text-align: left;
+}
+
+/****************************************
+*****************************************
+* Miscellaneous Styles - clear fix, etc
+*****************************************
+*******************news****************/
+
+/*MICRO-CLEARFIX by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/*/
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+.cf:after { 
+  clear:both; 
+}
+
+
+/*****************************************************************
+ * OTHER - can use these classes with hover or with js to activate
+ ****************************************************************/
+
+/*
+.rotateAndFade {
+    -webkit-animation: shadeInOut 2s 4, roll .5s 16;
+    -moz-animation: shadeInOut 2s 4, roll .5s 16;
+    -o-animation: shadeInOut 2s 4, roll .5s 16;
+    animation: shadeInOut 2s 4, roll .5s 16;
+}
+.fadeInAndOut80 {
+    -webkit-animation: shadeInOut 2s 4;
+    -moz-animation: shadeInOut 2s 4;
+    -o-animation: shadeInOut 2s 4;
+    animation: shadeInOut 2s 4;
+}
+.fadeIn100 {
+    -webkit-animation: shadeIn 2s 1;
+    -moz-animation: shadeIn 2s 1;
+    -o-animation: shadeIn 2s 1;
+    animation: shadeIn 2s 1;
+}
+.fadeInAndOut50 {
+    -webkit-animation: steadyInOut 10s 30;
+    -moz-animation: steadyInOut 10s 30;
+    -o-animation: steadyInOut 10s 30;
+    animation: steadyInOut 10s 30;
+}
+.fadeInOutOnce {
+    -webkit-animation: steadyInOut 1s 1;
+    -moz-animation: steadyInOut 1s 1;
+    -o-animation: steadyInOut 1s 1;
+    animation: steadyInOut 1s 1;
+}
+.wobble {
+    -webkit-animation: tinyRoll 1s 150;
+    -moz-animation: tinyRoll 1s 150;
+    -o-animation: tinyRoll 1s 150;
+    animation: tinyRoll 1s 150;
+}
+*/
+
+
+
+
+@keyframes roll {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+}
+@keyframes littleRoll {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+@keyframes tinyRoll {
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+}
+@keyframes slipFromRight {
+    0% {
+        transform: translate(300px, 0);    
+        font-size: 0%;
+    }
+    100% { transform: translate(0, 0); }
+}
+@keyframes slipFromLeft {
+    0% {
+        transform: translate(-100vw, 0);    
+        font-size: 0%;
+    }
+    100% { transform: translate(0, 0); }
+}
+@keyframes shadeInOut {
+    0%, 100% { opacity: 0; }
+    80% { opacity: .8; }
+}
+@keyframes steadyInOut {
+    0%, 100% { opacity: .05; }
+    50% { opacity: .9; }
+}
+@keyframes shadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/*********************************************************
+ * MEDIA
+ ********************************************************/
+
+/*
+ * These screen sizes are based on bootstrap.css version 4
+ * xs < 576px
+ * sm >= 576px
+ * md >= 768px
+ * lg >= 992 px
+ * xl >= 1200px
+ */
+
+/*xs screen*/
+@media (min-width: 0px) {
+  .navbar .myMenu li {
+    background-color: black;
+  }
+  .navbar button {
+    background-color: var(--colorB);
+    opacity: .6;
+  }
+  .navbar .myMenu li:hover {
+    background-color: #212121;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .myMenu li {
+    width: 12%;
+  }
+  .jumbotron {
+/*    padding-left: 8%;*/
+  }
+  .jumbotron h1 {
+    font-size: 2.8rem;
+  }
+  .jumbotron h2 {
+    font-size: 2.0rem;
+  }
+  .jumbotron h4 {
+    font-size: 1.5rem;
+  }
+}
+
+/*sm screen*/
+@media (min-width: 576px) {
+  .bottom .container a {
+    font-size: 2em;
+  }
+  .jumbotron h1 {
+    font-size: 3.0rem;
+  }
+  .jumbotron h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/*md screen*/
+@media (min-width: 768px) {
+  .navbar, .navbar:hover {
+    background-color: rgba(0, 0, 0, .8);
+  }
+  .navbar .myMenu li, .navbar button {
+    background-color: inherit;
+  }
+  .navbar .myMenu li:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }
+  .navbar-brand {
+    display:inherit;
+  }
+  .myMenu li {
+    font-size: 80%;
+    width: 14%;
+  }
+  .jumbotron h1 {
+    font-size: 3.3rem;
+  }
+  .jumbotron h2 {
+    font-size: 2.5rem;
+  }
+  .jumbotron h4 {
+    font-size: 1.8rem;
+  }
+}
+
+/*lg screen*/
+@media (min-width: 992px) {
+  .myMenu li {
+    font-size: 100%;
+    width: 16%;
+  }
+  .jumbotron h1 {
+    font-size: 4.0rem;
+  }
+  .jumbotron h2 {
+    font-size: 3.0rem;
+  }
+  .jumbotron h4 {
+    font-size: 2.2rem;
+  }
+}
+
+/*xl screen*/
+@media (min-width: 1200px) {
+}
