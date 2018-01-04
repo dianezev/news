@@ -251,7 +251,7 @@ console.log(url);
   // This function puts stories into one collapsible div
   function getNPR_StoryHTML_ver2(stories) {
     console.log(stories);
-    var storyHTML = '';    
+    var storyHTML = '<ul>';    
     var paraArray;
     var title;
     var link;
@@ -294,7 +294,9 @@ console.log(url);
                   + '</div></li>';
       }
     }
-    if (storyHTML === '') {
+    storyHTML += '</ul>';
+    
+    if (storyHTML === '<ul></ul>') {
         storyHTML = '<p>There are no stories for the selected topic between ' + startDate + ' & ' + endDate + '.</p>';
     }
     return storyHTML;
