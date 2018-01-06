@@ -10,47 +10,35 @@
  * 4. Deploy
  *
  *
- * Request & render NPR data.
- *
- * Note LISTING OF TOPICS from NPR does not require an API Key
- * but STORIES do require a key.
+ * Request & render stories and story titles from news organizations.
+ * Uses API from npr.org and newsapi.org
  *
  * To keep the API key private when requesting STORIES,
  * use node.js/Express to make a server-side request.
  * TBD: implement env?
- * (TBD: verify that it won't show up in url, github, etc.)
- *
- * For LISTING OF TOPICS (which do not require API key), make request
- * from client.
- *
  */
-$(window).on("load", function() {
-//'use strict';
-//
-//$(function(){
-    var HREF_NPR = 'http://api.npr.org/';
-    var $news = $('#newsStories');
-    
-    // Bind click event to get NPR stories
-    $('.newsSection').on('change', 'select', function(e) {
-      getNPR_Stories(HREF_NPR);
-      e.preventDefault();
-    });
-  
-    // User clicks news title to open or close
-    $('#newsStories').on('click', 'li .title', function() {
-      toggleStory(this.parentElement.id);
-    });
 
-    // User clicks up arrow to close story
-    $('#newsStories').on('click', '.endStory', function() {
-      toggleStory($(this).attr("name"));
-    });
-  
+$(function(){
+  'use strict';
 
-  
+  var HREF_NPR = 'http://api.npr.org/';
+  var $news = $('#newsStories');
 
+  // Bind click event to get NPR stories
+  $('.newsSection').on('change', 'select', function(e) {
+    getNPR_Stories(HREF_NPR);
+    e.preventDefault();
+  });
 
+  // User clicks news title to open or close
+  $('#newsStories').on('click', 'li .title', function() {
+    toggleStory(this.parentElement.id);
+  });
+
+  // User clicks up arrow to close story
+  $('#newsStories').on('click', '.endStory', function() {
+    toggleStory($(this).attr("name"));
+  });
   
 
       

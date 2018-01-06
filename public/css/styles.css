@@ -291,6 +291,9 @@ form {margin-bottom: 15px;}
   padding-bottom: 10px;
   text-align: center;
 }
+.endStory:hover {
+  cursor: pointer;
+}
 
 /* This class automatically appended by NPR API*/
 .fullattribution {
