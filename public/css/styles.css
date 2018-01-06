@@ -3,53 +3,68 @@
  * January 2018
  *
  * STILL UNDER CONSTRUCTION!
+ * 
+ * Table of Contents:
+ * 1. Colors
+ * 2. Universal/General
+ * 3. Background
+ * 4. Navbar
+ * 5. News
+ * 6. About
+ * 7. Footer
+ * 8. Misc
+ * 9. Animation
+ * 10. Media
  *************************************************************************************/
 
 /**************************************
- * COLORS
+ * 1. COLORS
  **************************************/
 :root {
-/*  --colorA: rgb(234, 235, 210);*/
   --colorA: rgb(222, 222, 216);
   --colorB: #235b9c;  /* link colors */
   --colorC: rgb(64, 103, 178);
   --colorD: #11344e; /* news titles */
-
 }
 
 
-
-
 /***********************************************
-************************************************
-* Universal/General Styles for start page
-************************************************
+* 2. Universal/General Styles for start page
 ************************************************/
 
 * {
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 body, html {
   line-height:1.8;
 }
 body { 
-    overflow: hidden;
-    position: relative;
   /* using this instead of height: 100% in order to get animate scrolltop to work */
   height: auto;
   min-height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 html { 
   overflow-x: hidden;
   overflow-y: scroll;
 }
 body, button, .btn, .sidebar, .scores {
-    font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  padding: 5px;
 }
 p { margin:0; }
 form {margin-bottom: 15px;}
+
+.alignTop {
+  align-self: top;
+  flex:1;  
+  overflow: inherit;
+}
 
 /*center class from CSS tricks*/
 .center {
@@ -61,34 +76,21 @@ form {margin-bottom: 15px;}
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
+.hide { display: none; }
 
-.backgroundShade {
-    background-color: #090A3B;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-.backgroundImg {
-/*    background-color: #121824;*/
-    background-color: #dedede;
-}
+/***********************************************
+* 3. BACKGROUND
+************************************************/
 
 /*photo from pexels.com*/
 .bgimg-1 {
   background-attachment: fixed;
-/*  height: 100vh;*/
-/*  background-image: url("../images/holdWorld4.jpg");*/
   background-image: url("../images/flag1.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .bgimg-1 {
-/*  padding-top: 10vh;*/
-/*  padding-bottom: 5vh;*/
-/*  width: 100%;*/
   height: 100%;
   min-height: 100vh;
 }
@@ -102,7 +104,7 @@ form {margin-bottom: 15px;}
 }
 
 /*************************************************************
- * NAVBAR 
+ * 4. NAVBAR 
  *************************************************************/
 
 .navbar {
@@ -115,16 +117,29 @@ form {margin-bottom: 15px;}
 .navbar .myMenu li:hover {
   font-weight: 800;
 }
-.myMenu a {
-  font-size: 120%;
-}
-ul.myMenu {
+.myMenu {
   margin: auto;
   width: 800%;
   justify-content: flex-end;
 }
+.myMenu a {
+  font-size: 120%;
+}
 .myMenu li {
   text-align: center;
+}
+.myMenu li:hover .choice {
+  display:block;
+}
+
+
+
+/*************************************************************
+ * 5. NEWS
+ *************************************************************/
+.choice button {
+  background-color: transparent;
+  border: none;
 }
 .choice h5 {
   text-align: center;
@@ -132,14 +147,7 @@ ul.myMenu {
 .choice select {
   font-size: 1.6em;
 }
-.choice button {
-  background-color: transparent;
-  border: none;
-}
-.selChoice select {
-  display: block;
-  margin: 0 auto;
-}
+
 .selChoice {
   line-height: 3em;
   margin:auto;
@@ -151,69 +159,31 @@ ul.myMenu {
   display: block;
   margin: auto;
 }
-.selChoice i {
-  vertical-align: middle;
-}
 .selChoice button:hover {
   color:white;
 }
-.selChoice select {
-  display: block;
-  max-width: 300px;
+.selChoice i {
+  vertical-align: middle;
 }
 .selChoice h4, .selChoice select {
-/*  font-family: 'Alfa Slab One', cursive;*/
   font-family: 'Mukta Malar', sans-serif;
 }
-
-.myMenu li:hover .choice {
-  display:block;
+.selChoice select {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
 }
-.jumbotron {
-  background: transparent;
-}
-.jumbotron h1, .navbar-brand {
-/*  font-family: 'Sedgwick Ave', cursive;*/
-}
-/*************************************************************
- * FOOTER
- *************************************************************/
-.bottom {
-  background-color: black;
-}
-.bottom .container {
-  position: relative;
-  height: 50px;
-}
-.bottom .container a {
-  color: white;
-  opacity: .7;
-}
-.bottom .container a:hover {
-  opacity: 1;
-  text-decoration: none;
+.gridBox {
+  display:flex;
+  padding: 0;
+  overflow-y: auto;
 }
 
-/*************************************************************
- * NEWS ARTICLES
- *************************************************************/
 .newsSection {
   margin-top: 66px;
 }
-.gridBox {
-/*  margin: 5px;*/
-  display:flex;
-/*  height: 70vh;*/
-  padding: 0;
-  overflow-y: auto;
-/*
-  -webkit-box-shadow: 3px 10px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    3px 10px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         3px 10px 5px 0px rgba(50, 50, 50, 0.75);
-*/
-}
+
 .newsDiv {
-/*  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;*/
   font-family: 'Merriweather', serif;
   font-size: .8125rem;
   line-height: 1.125rem;
@@ -222,8 +192,6 @@ ul.myMenu {
   padding-left: 15px;
   padding-right: 15px;
 }
-
-
 .newsDiv h6 {
   background-color: black;
   text-align: center;
@@ -237,163 +205,102 @@ ul.myMenu {
   height: 20px;
 }
 
-
-
-
 .news {
   background-color: var(--colorA);
-  position: relative;
+  font-weight: 200;
+  overflow-y: auto;
+  position:relative;
 }
-.news ul {
-  margin-bottom: 0;
-/*  list-style-type: circle;*/
+.news a {
+  color: var(--colorB);
+  text-decoration: none;
 }
-.news h5, .news i {
-  color: var(--colorC);
-  text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
+.news a:hover {
+  color: #5d519f;
 }
-.endStory {
-  text-align: center;
-  padding-bottom: 10px;
+.news blockquote {
+  margin: 0;
+  padding: 0 30px;
 }
-.news i {
-  vertical-align: top;
-}
-.news h5 {
-  color: lightgray;
-  background-color: var(--colorD);
-  font-family: 'Mukta Malar', sans-serif;
-  margin: auto;
-/*  width: 80%;*/
-}
-.news h5:hover {
-  cursor: pointer;
+.news h1, .news h2, .news h3, .news h4, .news h5, .news h6 {
+  padding:5px 12px;
 }
 .news h3 {
   text-align: left;
 }
-.news a {
-  color: var(--colorB);
+.news h5 {
+  background-color: var(--colorD);
+  color: lightgray;
+  font-family: 'Mukta Malar', sans-serif;
+  margin: auto;
+}
+.news h5:hover {
+  cursor: pointer;
+}
+.news h5, .news i {
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.news i {
+  color: var(--colorC);
+  vertical-align: top;
+}
+.news li p a {
+  color: #536fc0;
+}
+.news li p a:hover {
+  color: #678aee;
+  text-decoration: underline;
 }
 .news p {
   padding: 8px;
+}
+.news ul {
+  margin-bottom: 0;
+}
+.news>ul>li {
+  border: none;
+  border-top: 2px solid white;
+  list-style: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  text-decoration: none;
+}
+.news>ul>li:last-child {
+  border-bottom: 2px solid white;
+}
+.news>ul>li span.hide {
+  display: none;
+}
+
+.storyTitle p {
+  display: inline-block;
+  width: 80%;
+}
+.storyTitle span {
+  line-height: 24px;
+  padding-top: 8px;
+  vertical-align: top;
+}
+.storyTitle span i {
+  vertical-align: middle;
+}
+.endStory {
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /* This class automatically appended by NPR API*/
 .fullattribution {
   text-align: center;
 }
-.gridBox .news p {
-/*  color: lightgray;*/
-}
-strong {
-  font-weight:800;
-  font-size: 110%;
-  text-transform: uppercase;
-}
 
 
-
-
-.alignTop {
-  align-self: top;
-  flex:1;  
-  overflow: inherit;
-}
-
-/********************************
-*********************************
-* Collapsible news
-*********************************
-********************************/
-.hide { display: none; }
-.news>ul>li {
-/*    background-color: #d4d6db;*/
-    text-decoration: none;
-  border: none;
-  border-top: 2px solid white;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.news>ul>li:last-child {
-  border-bottom: 2px solid white;
-}
-.news a:hover {
-    color: #5d519f;
-}
-.news li p a {
-    color: #536fc0;
-}
-.news li p a:hover {
-    color: #678aee;
-    text-decoration: underline;
-}
-.news a {
-/*    color: #79798b;*/
-}
-.news p {
-/*    color: #d0d0e7;*/
-}
-.news {
-    font-weight: 200;
-    overflow-y: auto;
-    position:relative;
-}
-
-.news a {
-    text-decoration: none;
-}
-.news>ul>li {
-    list-style: none;
-    position: relative;
-/*    text-align: center;*/
-}
-.news>li span, .storyTitle p {
-  display: inline-block;
-}
-.storyTitle span {
-/*  line-height:normal;*/
-  vertical-align: top;
-  padding-top: 8px;
-  line-height: 24px;
-/*  height:100px;*/
-}
-.storyTitle span i {
-  vertical-align: middle;
-}
-
-.storyTitle p {
-  width: 80%;
-}
-.news>ul>li span.hide {
-  display: none;
-}
-h1, h2, h3, h4, h5, h6 {
-  padding: 5px;
-}
-
-.news>li p, .news h1, .news h2, .news h3, .news h4, .news h5, .news h6 {
-    padding:5px 12px;
-}
-.news blockquote {
-  padding: 0 30px;
-  margin: 0;
-}
-.news>li li {
-    list-style: disc inside;
-/*    position: relative;*/
-/*    text-align: center;*/
-}
-.news>li ul p {
-  padding: 0;
-}
-.news>li ul {
-  margin-left: 10%;
-  margin-bottom: 0;
-}
-
+/*************************************************************
+ * 6. ABOUT
+ *************************************************************/
 .about p {
     line-height: 1.2;
     padding-right:.5em;
@@ -401,10 +308,33 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
 
+/*************************************************************
+ * 7. FOOTER
+ *************************************************************/
+.bottom {
+  background-color: black;
+}
+.bottom .container {
+  height: 50px;
+  position: relative;
+}
+.bottom .container a {
+  color: white;
+  opacity: .7;
+}
+.bottom .container a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
 /****************************************
-*****************************************
-* Miscellaneous Styles - clear fix, etc
-*****************************************
+* 8. Miscellaneous Styles - clear fix, etc
 *******************news****************/
 
 /*MICRO-CLEARFIX by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/*/
@@ -418,7 +348,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*****************************************************************
- * OTHER - can use these classes with hover or with js to activate
+ * 9. ANIMATION
  ****************************************************************/
 
 /*
@@ -459,9 +389,6 @@ h1, h2, h3, h4, h5, h6 {
     animation: tinyRoll 1s 150;
 }
 */
-
-
-
 
 @keyframes roll {
     0%, 100% { transform: rotate(-6deg); }
@@ -504,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*********************************************************
- * MEDIA
+ * 10. MEDIA
  ********************************************************/
 
 /*
